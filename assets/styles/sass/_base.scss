@@ -7,3 +7,8 @@ $overlay: #101112;
 $carde: #242C3C;
 $subCard: #880A05;
 $sombra: #000000;
+
+@mixin flx($direcao: row) {
+    display: flex;
+    flex-direction: $direcao;
+}

@@ -1,0 +1,11 @@
+.card {
+  @include flx($direcao: column)
+}
+
+.card__moldura {
+  
+}
+
+.card__imagem {
+  border-radius: 100%;
+}
