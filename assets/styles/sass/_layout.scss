@@ -1,11 +1,89 @@
+.conteiner {
+  margin: 30px 25px;
+}
+
 .card {
-  @include flx($direcao: column)
+  @include flx($direcao: column);
+  background: $card;
+  border: 3px solid $principal;
+  border-radius: 16px;
+  padding: 16px;
+  font-family: libre-franklin, sans-serif;
+  row-gap: 15px;
+
+  &__moldura {
+    position: relative;
+    border-radius: 100%;
+    box-shadow: 0 2px 0px 1.75px $subCard;
+    align-self: center;
+    padding: $calhaMoldura;
+    max-width: 160px;
+    box-sizing: border-box;
+  }
+
+  &__moldura::after {
+    content: '';
+    display: block;
+    border-radius: 100%;
+    height: calc(100% - #{$calhaMoldura * 2});
+    width: calc(100% - #{$calhaMoldura * 2});
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    box-shadow: inset 0 0 .5rem .5rem $subCard;
+    transform: translate(-50%, -50%);
+  }
+
+  &__imagem {
+    border-radius: 100%;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+
+  &__principal {
+    @include flx($direcao: column);
+    row-gap: 10px;
+    text-align: center;
+    color: $fontes;
+  }
+
+  &__titulo {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  &__subtitulo {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  &__texto {
+    line-height: normal;
+  }
+
+  &__rodape {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__social {
+    color: $fontes;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $principal;
+    border-radius: 5px;
+    text-align: center;
+    min-height: 50px;
+    max-width: 130px;
+    width: 100%;
+    font-size: 16px;
+    text-decoration: none;
+    box-shadow: 3px 3px 0 0 $sombra;
+  }
 }
 
-.card__moldura {
-  
-}
-
-.card__imagem {
-  border-radius: 100%;
-}

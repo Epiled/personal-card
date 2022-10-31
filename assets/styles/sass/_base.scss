@@ -4,9 +4,10 @@ $fontes: #FFFFFF;
 $principal: #880A05;
 $secundario: #04112C;
 $overlay: #101112;
-$carde: #242C3C;
-$subCard: #880A05;
+$card: #242c3dbf;
+$subCard: #8a0905bf;
 $sombra: #000000;
+$calhaMoldura: 5px;
 
 @mixin flx($direcao: row) {
     display: flex;
