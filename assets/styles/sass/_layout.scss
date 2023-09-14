@@ -1,15 +1,40 @@
 .conteiner {
-  margin: 30px 25px;
+  margin: 0px 25px;
+  @include flx($direcao: column);
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: $overlay url(../../images/fundo/electric-guitar.png);
+  background-repeat: space;
+  font-family: libre-franklin, sans-serif;
 }
 
 .card {
-  @include flx($direcao: column);
-  background: $card;
+  background: $secundario;
   border: 3px solid $principal;
-  border-radius: 16px;
-  padding: 16px;
-  font-family: libre-franklin, sans-serif;
-  row-gap: 15px;
+  border-radius: calc(#{$espacoPadrao} * 2);
+
+  &__pessoal {
+    @include flx($direcao: column);
+    background: $card;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 3px solid $principal;
+    border-radius: 13px;
+    box-sizing: border-box;
+    padding: calc(#{$espacoPadrao} * 2);
+    row-gap: 15px;
+    width: 100%;
+    max-width: 305px;
+    position: relative;
+    z-index: 1;
+
+    @include in-tablet {
+      padding: calc(#{$espacoPadrao} * 4) calc(#{$espacoPadrao} + 40px);
+      max-width: 400px;
+    }
+  }
 
   &__moldura {
     position: relative;
@@ -44,19 +69,17 @@
   &__principal {
     @include flx($direcao: column);
     row-gap: 10px;
-    text-align: center;
     color: $fontes;
+    text-align: center;
   }
 
   &__titulo {
-    font-size: 28px;
-    font-weight: bold;
+    @include fontePadrao($tamanho: 28px, $peso: bold);
   }
 
   &__subtitulo {
-    font-size: 18px;
-    font-weight: bold;
-    font-style: italic;
+    @include fontePadrao($tamanho: 18px, $estilo: italic, $peso: bold);
+
   }
 
   &__texto {
@@ -64,26 +87,50 @@
   }
 
   &__rodape {
-    display: flex;
+    @include flx;
     gap: 10px;
     flex-wrap: wrap;
     justify-content: space-between;
   }
-
-  &__social {
-    color: $fontes;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: $principal;
-    border-radius: 5px;
-    text-align: center;
-    min-height: 50px;
-    max-width: 130px;
-    width: 100%;
-    font-size: 16px;
-    text-decoration: none;
-    box-shadow: 3px 3px 0 0 $sombra;
-  }
 }
 
+.linguagens {
+  @include flx($direcao: column);
+  background: $secundario;
+  box-sizing: border-box;
+  border-radius: 0 0 calc(#{$espacoPadrao} * 2) calc(#{$espacoPadrao} * 2);
+  padding: calc(#{$espacoPadrao} * 2);
+  width: 100%;
+  max-width: 305px;
+  justify-content: center;
+
+  @include in-tablet {
+    max-width: 400px;
+    padding: calc(#{$espacoPadrao} * 2) calc(#{$espacoPadrao} * 2) calc(#{$espacoPadrao} * 3);
+  }
+
+  &__titulo {
+    @include fontePadrao($estilo: italic, $peso: 600);
+    color: $fontes;
+    margin-bottom: calc(#{$espacoPadrao} * 2);
+  }
+
+  &__lista {
+    @include flx;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    color: $fontes;
+    background: $principal;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px 1px $sombra inset;
+    padding: $espacoPadrao 0;
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 60px;
+    width: calc(25% - #{$espacoPadrao});
+  }
+}

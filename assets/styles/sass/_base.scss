@@ -8,8 +8,33 @@ $card: #242c3dbf;
 $subCard: #8a0905bf;
 $sombra: #000000;
 $calhaMoldura: 5px;
+$espacoPadrao: 8px;
+
+%destaque { color: $principal }
+
+.destaque {
+  @extend %destaque;
+}
+
+@mixin in-tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin in-desktop {
+  @media screen and (min: 1368px) {
+    @content;
+  }
+}
 
 @mixin flx($direcao: row) {
-    display: flex;
-    flex-direction: $direcao;
+  display: flex;
+  flex-direction: $direcao;
+}
+
+@mixin fontePadrao($tamanho: 20px, $estilo: normal, $peso: normal) {
+  font-size: $tamanho;
+  font-style: $estilo;
+  font-weight: $peso;
 }

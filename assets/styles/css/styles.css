@@ -45,18 +45,65 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.conteiner {
-  margin: 30px 25px; }
+.destaque {
+  color: #880A05; }
 
-.card {
+.btn {
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #880A05;
+  border-radius: 5px;
+  text-align: center;
+  min-height: 50px;
+  max-width: 130px;
+  width: calc(50% - 5px);
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 3px 3px 0 0 #000000;
+  transition: background .5s, box-shadow .5s; }
+  .btn:hover {
+    background: #04112C;
+    box-shadow: 3px 3px 0 0 #880A05; }
+  .btn__icon {
+    margin-right: 3px; }
+
+.conteiner {
+  margin: 0px 25px;
   display: flex;
   flex-direction: column;
-  background: #242c3dbf;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #101112 url(../../images/fundo/electric-guitar.png);
+  background-repeat: space;
+  font-family: libre-franklin, sans-serif; }
+
+.card {
+  background: #04112C;
   border: 3px solid #880A05;
-  border-radius: 16px;
-  padding: 16px;
-  font-family: libre-franklin, sans-serif;
-  row-gap: 15px; }
+  border-radius: calc(8px * 2); }
+  .card__pessoal {
+    display: flex;
+    flex-direction: column;
+    background: #242c3dbf;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 3px solid #880A05;
+    border-radius: 13px;
+    box-sizing: border-box;
+    padding: calc(8px * 2);
+    row-gap: 15px;
+    width: 100%;
+    max-width: 305px;
+    position: relative;
+    z-index: 1; }
+    @media screen and (min-width: 768px) {
+      .card__pessoal {
+        padding: calc(8px * 4) calc(8px + 40px);
+        max-width: 400px; } }
   .card__moldura {
     position: relative;
     border-radius: 100%;
@@ -85,35 +132,60 @@ table {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
-    text-align: center;
-    color: #FFFFFF; }
+    color: #FFFFFF;
+    text-align: center; }
   .card__titulo {
     font-size: 28px;
+    font-style: normal;
     font-weight: bold; }
   .card__subtitulo {
     font-size: 18px;
-    font-weight: bold;
-    font-style: italic; }
+    font-style: italic;
+    font-weight: bold; }
   .card__texto {
     line-height: normal; }
   .card__rodape {
     display: flex;
+    flex-direction: row;
     gap: 10px;
     flex-wrap: wrap;
     justify-content: space-between; }
-  .card__social {
+
+.linguagens {
+  display: flex;
+  flex-direction: column;
+  background: #04112C;
+  box-sizing: border-box;
+  border-radius: 0 0 calc(8px * 2) calc(8px * 2);
+  padding: calc(8px * 2);
+  width: 100%;
+  max-width: 305px;
+  justify-content: center; }
+  @media screen and (min-width: 768px) {
+    .linguagens {
+      max-width: 400px;
+      padding: calc(8px * 2) calc(8px * 2) calc(8px * 3); } }
+  .linguagens__titulo {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 600;
     color: #FFFFFF;
+    margin-bottom: calc(8px * 2); }
+  .linguagens__lista {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap; }
+  .linguagens__item {
+    color: #FFFFFF;
     background: #880A05;
     border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px 1px #000000 inset;
+    padding: 8px 0;
+    text-transform: uppercase;
     text-align: center;
-    min-height: 50px;
-    max-width: 130px;
-    width: 100%;
-    font-size: 16px;
-    text-decoration: none;
-    box-shadow: 3px 3px 0 0 #000000; }
+    max-width: 60px;
+    width: calc(25% - 8px); }
 
 /*# sourceMappingURL=styles.css.map */
